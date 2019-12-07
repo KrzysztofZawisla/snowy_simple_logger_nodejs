@@ -19,7 +19,7 @@ fn console_output(mut cx: FunctionContext, type &str) -> () {
         println!("{}", output.color(Color::Red));
     } else if type == "success" {
         println!("{}", output.color(Color::Green));
-    } else if type == "warning" {
+    } else if type == "warn" {
         println!("{}", output.color(Color::Orange1));
     }
 }
@@ -58,7 +58,7 @@ fn console_success(mut cx: FunctionContext) -> JsResult<JsUndefined> {
 }
 
 fn console_warn(mut cx: FunctionContext) -> JsResult<JsUndefined> {
-    console_output(cx, "warning");
+    console_output(cx, "warn");
     Ok(cx.undefined())
 }
 
