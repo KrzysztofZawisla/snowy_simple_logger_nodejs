@@ -8,7 +8,7 @@ use colorful::Colorful;
 use std::fs;
 use std::path;
 
-fn console_output(mut cx: FunctionContext, type &str) -> () {
+fn console_output(mut cx: FunctionContext, type: &str) -> () {
     let now = chrono::Local::now();
     let message = cx.argument::<JsString>(0)?.value();
     let now = now.format("[%Y-%m-%d %H:%M:%S%.3f] ").to_string();
@@ -24,7 +24,7 @@ fn console_output(mut cx: FunctionContext, type &str) -> () {
     }
 }
 
-fn file_output(mut cx: FunctionContext, type &str) -> () {
+fn file_output(mut cx: FunctionContext, type: &str) -> () {
     let now = chrono::Local::now();
     let message = cx.argument::<JsString>(0)?.value();
     let path = cx.argument::<JsString>(1)?.value();
