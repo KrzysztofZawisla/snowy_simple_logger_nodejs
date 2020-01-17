@@ -1,13 +1,14 @@
 [package]
-name = "snowy-node-logger"
+name = "snowy_simple_logger"
 version = "0.1.0"
-authors = ["Krzysztof Zawisła <32432944+KrzysztofZawisla@users.noreply.github.com>"]
+authors = ["Krzysztof Zawisła <zawislakrzysztof.zk@github.com>"]
+repository = "https://github.com/KrzysztofZawisla/snowy_simple_logger_nodejs"
 license = "MIT"
 build = "build.rs"
 exclude = ["artifacts.json", "index.node"]
 
 [lib]
-name = "snowy_node_logger"
+name = "snowy_simple_logger"
 crate-type = ["cdylib"]
 
 [build-dependencies]
