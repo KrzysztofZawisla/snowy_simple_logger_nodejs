@@ -1,34 +1,35 @@
 const addon = require('../native');
 
 class Console {
-  static info(message) {
+  static info(message: string) {
     addon.consoleInfo(message);
   }
-  static error(message) {
+  static error(message: string) {
     addon.consoleError(message);
   }
-  static success(message) {
+  static success(message: string) {
     addon.consoleSuccess(message);
   }
-  static warn(message) {
+  static warn(message: string) {
     addon.consoleWarn(message);
   }
 }
 
 class File {
-  constructor(path) {
+  public path: string;
+  constructor(path: string) {
     this.path = path;
   }
-  info(message) {
+  info(message: string) {
     addon.fileInfo(message, this.path);
   }
-  error(message) {
+  error(message: string) {
     addon.fileError(message, this.path);
   }
-  success(message) {
+  success(message: string) {
     addon.fileSuccess(message, this.path);
   }
-  warn(message) {
+  warn(message: string) {
     addon.fileWarn(message, this.path);
   }
 }
@@ -39,3 +40,5 @@ const snowySimpleLogger = {
 };
 
 module.exports = snowySimpleLogger;
+
+export default snowySimpleLogger;
