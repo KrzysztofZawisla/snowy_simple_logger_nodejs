@@ -1,18 +1,21 @@
 {
-  "name": "snowy-node-logger",
+  "name": "snowy_simple_logger",
   "version": "0.1.0",
-  "description": "Simple node.js logger written in Rust",
+  "description": "Object oriented library created in Rust to logging data into stdout and files.",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/KrzysztofZawisla/snowy-node-logger"
+    "url": "https://github.com/KrzysztofZawisla/snowy_simple_logger_nodejs"
   },
-  "author": "Krzysztof Zawisła <32432944+KrzysztofZawisla@users.noreply.github.com>",
+  "author": "Krzysztof Zawisła <zawislakrzysztof.zk@github.com>",
   "license": "MIT",
   "dependencies": {
     "neon-cli": "^0.3.3"
   },
   "scripts": {
     "install": "neon build"
+  },
+  "devDependencies": {
+    "@types/node": "^13.1.7"
   }
 }
