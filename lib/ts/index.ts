@@ -11,16 +11,21 @@ interface Addon {
 
 const addon: Addon = require('../../native');
 
+/** Console class has static methods to log data into stdout */
 class Console {
+  /** info is a static method which logging data into stdout */
   public static info(message: string) {
     addon.consoleInfo(message);
   }
+  /** error is a static method which logging data into stdout */
   public static error(message: string) {
     addon.consoleError(message);
   }
+  /** success is a static method which logging data into stdout*/
   public static success(message: string) {
     addon.consoleSuccess(message);
   }
+  /** warn is a static method which logging data into stdout*/
   public static warn(message: string) {
     addon.consoleWarn(message);
   }
