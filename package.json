@@ -1,6 +1,6 @@
 {
   "name": "snowy_simple_logger",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Object oriented library created in Rust to logging data into stdout and files.",
   "main": "./lib/js/index.js",
   "types": "./lib/js/index.d.ts",
