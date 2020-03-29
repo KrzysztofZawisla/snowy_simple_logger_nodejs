@@ -18,3 +18,15 @@ snowy_simple_logger
     | warn(message: string)
     | info(message: string)
 ```
+
+Generated files targeted to ESNext as commonjs:
+
+```js
+require('snowy_simple_logger/js').default;
+```
+
+Original TypeScript lib file:
+
+```ts
+import snowySimpleLogger from 'snowy_simple_logger/ts';
+```
