@@ -11,40 +11,46 @@ interface Addon {
 
 const addon: Addon = require('../../native');
 
-/** Console class has static methods to log data into stdout */
+/** Console class has static methods to log data into stdout. */
 class Console {
-  /** info is a static method which logging data into stdout */
+  /** info is a static method to logging data into stdout as basic information. */
   public static info(message: string) {
     addon.consoleInfo(message);
   }
-  /** error is a static method which logging data into stdout */
+  /** error is a static method to logging data into stdout as error. */
   public static error(message: string) {
     addon.consoleError(message);
   }
-  /** success is a static method which logging data into stdout*/
+  /** success is a static method to logging data into stdout as success information. */
   public static success(message: string) {
     addon.consoleSuccess(message);
   }
-  /** warn is a static method which logging data into stdout*/
+  /** warn is a static method to logging data into stdout as warning. */
   public static warn(message: string) {
     addon.consoleWarn(message);
   }
 }
 
+/** File is constructible class which allows to log data into file. */
 class File {
+  /** Path to log file */
   public path: string;
   constructor(path: string) {
     this.path = path;
   }
+  /** info is a method to logging data into file as information. */
   public info(message: string) {
     addon.fileInfo(message, this.path);
   }
+  /** error is a method to logging data into file as error. */
   public error(message: string) {
     addon.fileError(message, this.path);
   }
+  /** success is a method to logging data into file as success information. */
   public success(message: string) {
     addon.fileSuccess(message, this.path);
   }
+  /** warn is a method to logging data into file as warning. */
   public warn(message: string) {
     addon.fileWarn(message, this.path);
   }
