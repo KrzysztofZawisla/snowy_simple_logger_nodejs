@@ -1,12 +1,6 @@
 interface Addon {
-  consoleInfo(message: string): void;
-  consoleError(message: string): void;
-  consoleSuccess(message: string): void
-  consoleWarn(message: string): void;
-  fileInfo(message: string, path: string): void;
-  fileError(message: string, path: string): void;
-  fileSuccess(message: string, path: string): void;
-  fileWarn(message: string, path: string): void;
+  consoleLog(message: string, logType: string): void;
+  fileLog(message: string, logType: string, path: string): void;
 }
 
 const addon: Addon = require('../../native');
@@ -15,19 +9,19 @@ const addon: Addon = require('../../native');
 class Console {
   /** info is a static method to logging data into stdout as basic information. */
   public static info(message: string): void {
-    addon.consoleInfo(message);
+    addon.consoleLog(message, 'info');
   }
   /** error is a static method to logging data into stdout as error. */
   public static error(message: string): void {
-    addon.consoleError(message);
+    addon.consoleLog(message, 'error');
   }
   /** success is a static method to logging data into stdout as success information. */
   public static success(message: string): void {
-    addon.consoleSuccess(message);
+    addon.consoleLog(message, 'success');
   }
   /** warn is a static method to logging data into stdout as warning. */
   public static warn(message: string): void {
-    addon.consoleWarn(message);
+    addon.consoleLog(message, 'warn');
   }
 }
 
@@ -40,19 +34,19 @@ class File {
   }
   /** info is a method to logging data into file as information. */
   public info(message: string): void {
-    addon.fileInfo(message, this.path);
+    addon.fileLog(message, 'info', this.path);
   }
   /** error is a method to logging data into file as error. */
   public error(message: string): void {
-    addon.fileError(message, this.path);
+    addon.fileLog(message, 'error', this.path);
   }
   /** success is a method to logging data into file as success information. */
   public success(message: string): void {
-    addon.fileSuccess(message, this.path);
+    addon.fileLog(message, 'success', this.path);
   }
   /** warn is a method to logging data into file as warning. */
   public warn(message: string): void {
-    addon.fileWarn(message, this.path);
+    addon.fileLog(message, 'warn', this.path);
   }
 }
 
