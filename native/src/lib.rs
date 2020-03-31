@@ -31,10 +31,7 @@ fn file_output(message: String, log_type: &str, true_path: String) -> () {
         fs::File::create(&true_path).expect("Cannot create log file");
     }
     let log_file_content = fs::read_to_string(&true_path).expect("Cannot read log file");
-    let mut new_line = "";
-    if log_file_content != "" {
-        new_line = "\n";
-    }
+    let new_line = if log_file_content != "" { "\n" } else { "" };
     let log_file_content = log_file_content + new_line + &output;
     fs::write(true_path, log_file_content).expect("Cannot write to log file");
 }
