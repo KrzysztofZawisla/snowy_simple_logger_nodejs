@@ -28,9 +28,17 @@ class Console {
 /** File is constructible class which allows to log data into file. */
 class File {
   /** Path to log file */
-  public path: string;
+  private path: string;
   constructor(path: string) {
-    this.path = path;
+    this.path = path != '' ? path : 'log.log';
+  }
+  /** Setter for the path to log file */
+  public set setPath(path: string) {
+    this.path = path != '' ? path : 'log.log';
+  }
+  /** Getter for the path to log file */
+  public get getPath(): string {
+    return this.path;
   }
   /** info is a method to logging data into file as information. */
   public info(message: string): void {

@@ -12,8 +12,12 @@ declare class Console {
 /** File is constructible class which allows to log data into file. */
 declare class File {
     /** Path to log file */
-    path: string;
+    private path;
     constructor(path: string);
+    /** Setter for the path to log file */
+    set setPath(path: string);
+    /** Getter for the path to log file */
+    get getPath(): string;
     /** info is a method to logging data into file as information. */
     info(message: string): void;
     /** error is a method to logging data into file as error. */
